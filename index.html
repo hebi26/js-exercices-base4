@@ -16,7 +16,8 @@
 <body>
 
 <section class="container">
-  <p id="quiz"></p>
+  <h1>-QUIZZ-</h1>
+  <h3 id="quiz"></h3>
   <div class="row">
     <div class="box col-xs-12 col-md-6">
       <p id="rep1" class="rep">
@@ -47,96 +48,112 @@
 <script>
 
 var quizz = [
-  {
-    question: 'Que veux dire HTML ?!',
-    reponse1: 'High technology muchos locos',
-    reponse2: 'Hot tartine melon lepreux',
-    reponse3: 'Hyper Text Mark Langage',
-    reponse4: "Huit triste mamie lobotomisé",
-    correct : 'Hyper Text Mark Langage'
-  },
-  {
-    question: 'Que veux dire CSS ?!',
-    reponse1: 'High technology muchos locos',
-    reponse2: 'Hot tartine melon lepreux',
-    reponse3: 'yolo',
-    reponse4: "Huit triste mamie lobotomisé",
-    correct : 'yolo'
-  },
-  {
-    question: 'Que veux dire PHP ?!',
-    reponse1: 'High technology muchos locos',
-    reponse2: 'Hot tartine melon lepreux',
-    reponse3: 'toto',
-    reponse4: "Huit triste mamie lobotomisé",
-    correct : 'toto'
-  },
-  {
-    question: 'Que veux dire JS?!',
-    reponse1: 'High technology muchos locos',
-    reponse2: 'fada',
-    reponse3: 'Hyper Text Mark Langage',
-    reponse4: "Huit triste mamie lobotomisé",
-    correct : 'fada'
-  },
-  {
-    question: 'Que veux dire SQL ?!',
-    reponse1: 'Social Quantum Length',
-    reponse2: 'Hot tartine melon lepreux',
-    reponse3: 'Hyper Text Mark Langage',
-    reponse4: "Huit triste mamie lobotomisé",
-    correct : 'Social Quantum Length'
-  }
+ {
+   question: 'Que veux dire HTML ?',
+   reponse1: 'High technology muchos locos',
+   reponse2: 'Hot tartine melon lepreux',
+   reponse3: 'Hyper Text Mark Langage',
+   reponse4: "Huit triste mamie lobotomisé",
+   correct : 'Hyper Text Mark Langage'
+ },
+ {
+   question: 'Quel est la couleur du cheval blanc d\'Henry IV?',
+   reponse1: 'Noir',
+   reponse2: 'Couleur cheval',
+   reponse3: 'Marron',
+   reponse4: "Blanc",
+   correct : 'Blanc'
+ },
+ {
+   question: 'Quel age a Patrick ?',
+   reponse1: "Ché pas, pas demandé",
+   reponse2: '92 ans',
+   reponse3: 'On ne compte plus  depuis longtemps',
+   reponse4: "36",
+   correct : 'Ché pas, pas demandé'
+ },
+ {
+   question: 'Que veux dire JS?',
+   reponse1: 'Jean Sérien',
+   reponse2: 'Joie sérieuse',
+   reponse3: 'Javascript',
+   reponse4: "Javasuite",
+   correct : 'Javascript'
+ },
+ {
+   question: 'A quoi sert le SQL ?',
+   reponse1: 'A faire style t\'es un dev',
+   reponse2: 'A gérer des bases de données',
+   reponse3: 'A couper du bois',
+   reponse4: "A compléter ton Cv",
+   correct : 'A gérer des bases de données'
+ }
 ];
 
-var i=0;
+function affichage(){
+   document.getElementById('quiz').innerHTML = quizz[i].question;
+   document.getElementById('rep1').innerHTML = quizz[i].reponse1;
+   document.getElementById('rep2').innerHTML = quizz[i].reponse2;
+   document.getElementById('rep3').innerHTML = quizz[i].reponse3;
+   document.getElementById('rep4').innerHTML = quizz[i].reponse4;
+   };
 
-document.getElementById('btn2').onclick = function() {
+   var i=0;
 
-    document.getElementById('quiz').innerHTML = null;
-    document.getElementById('rep1').innerHTML = null;
-    document.getElementById('rep2').innerHTML = null;
-    document.getElementById('rep3').innerHTML = null;
-    document.getElementById('rep4').innerHTML = null;
-
-    document.getElementById('quiz').innerHTML += quizz[i].question;
-    console.log(i);
-    document.getElementById('rep1').innerHTML += quizz[i].reponse1;
-    document.getElementById('rep2').innerHTML += quizz[i].reponse2;
-    document.getElementById('rep3').innerHTML += quizz[i].reponse3;
-    document.getElementById('rep4').innerHTML += quizz[i].reponse4;
-
-    if (i < 4) {
-      i++;
-    }
-    else {
-      i=4;
-    }
-
-}
-
-document.getElementById('btn1').onclick = function() {
+   affichage();
+   test();
 
 
-    document.getElementById('quiz').innerHTML = null;
-    document.getElementById('rep1').innerHTML = null;
-    document.getElementById('rep2').innerHTML = null;
-    document.getElementById('rep3').innerHTML = null;
-    document.getElementById('rep4').innerHTML = null;
+   document.getElementById('btn2').onclick = function() {
+       if (i <= 4) {
+         i++;
+       }
+     affichage();
+     test();
+    //  console.log(quizz[i]);
+   }
 
-    document.getElementById('quiz').innerHTML += quizz[i].question;
-    document.getElementById('rep1').innerHTML += quizz[i].reponse1;
-    document.getElementById('rep2').innerHTML += quizz[i].reponse2;
-    document.getElementById('rep3').innerHTML += quizz[i].reponse3;
-    document.getElementById('rep4').innerHTML += quizz[i].reponse4;
+
+   document.getElementById('btn1').onclick = function() {
 
     if (i > 0) {
-      i--;
-    }
-    else {
-      i=0;
-    }
-}
+       i--;
+     }
+     affichage();
+     test();
+    //  console.log(quizz[i]);
+
+   }
+
+   function test(){
+
+     var reponse = document.getElementsByTagName('p');
+    //  var tableau = [];
+     var j;
+
+   for ( j = 0; j < reponse.length; j++ ){
+
+     reponse[j].style.backgroundColor = "white";
+     reponse[j].style.color = "black";
+
+     reponse[j].onclick = function(){
+
+      // tableau.push(reponse[i], reponse[i].textContent);
+      // console.log(tableau);
+
+    if (this.textContent===(quizz[i].correct)) {
+      this.style.backgroundColor = "green";
+      this.style.color = "white";
+      }
+      else {
+      this.style.backgroundColor = "darkred";
+      this.style.color = "white";
+      }
+    };
+  }
+};
+
+
 </script>
 
 

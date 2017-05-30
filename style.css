@@ -1,19 +1,35 @@
-
+*{
+  font-family: "Purisa";
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
 .row {
   padding: 0;
 }
 .box{
   padding: 10px;
 }
-
+p{
+  background-color: white;
+}
 .rep{
   border-radius: 5px;
   border: 1px solid black;
   height: 80px;
+  padding-top: 20px;
 }
 
+#quiz{
+  background-color: darkblue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+    color: white;
+}
 .btn{
   width: 200px;
+  background-color: orange;
+  height: 50px;
 }
 #btn1{
   float: left;
