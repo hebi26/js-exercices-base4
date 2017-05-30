@@ -1,0 +1,23 @@
+
+.row {
+  padding: 0;
+}
+.box{
+  padding: 10px;
+}
+
+.rep{
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 80px;
+}
+
+.btn{
+  width: 200px;
+}
+#btn1{
+  float: left;
+}
+#btn2{
+  float: right;
+}

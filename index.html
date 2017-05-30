@@ -1,13 +1,145 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Quiz</title>
-      <link rel="stylesheet" href="style.css">
-      <script src="script.js"></script>
-    </head>
-    <body>
-    
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+  <script src="./js/jquery.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+<section class="container">
+  <p id="quiz"></p>
+  <div class="row">
+    <div class="box col-xs-12 col-md-6">
+      <p id="rep1" class="rep">
+      </p>
+    </div>
+    <div class="box col-xs-12 col-md-6">
+      <p id="rep2" class="rep">
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="box col-xs-12 col-md-6">
+      <p id="rep3" class="rep">
+      </p>
+    </div>
+    <div class="box col-xs-12 col-md-6">
+      <p id="rep4" class="rep">
+      </p>
+    </div>
+  </div>
+
+
+    <button type="submit" id="btn1" class="btn">PREVIOUS</button>
+    <button type="submit" id="btn2" class="btn">NEXT</button>
+
+</section>
+
+<script>
+
+var quizz = [
+  {
+    question: 'Que veux dire HTML ?!',
+    reponse1: 'High technology muchos locos',
+    reponse2: 'Hot tartine melon lepreux',
+    reponse3: 'Hyper Text Mark Langage',
+    reponse4: "Huit triste mamie lobotomisé",
+    correct : 'Hyper Text Mark Langage'
+  },
+  {
+    question: 'Que veux dire CSS ?!',
+    reponse1: 'High technology muchos locos',
+    reponse2: 'Hot tartine melon lepreux',
+    reponse3: 'yolo',
+    reponse4: "Huit triste mamie lobotomisé",
+    correct : 'yolo'
+  },
+  {
+    question: 'Que veux dire PHP ?!',
+    reponse1: 'High technology muchos locos',
+    reponse2: 'Hot tartine melon lepreux',
+    reponse3: 'toto',
+    reponse4: "Huit triste mamie lobotomisé",
+    correct : 'toto'
+  },
+  {
+    question: 'Que veux dire JS?!',
+    reponse1: 'High technology muchos locos',
+    reponse2: 'fada',
+    reponse3: 'Hyper Text Mark Langage',
+    reponse4: "Huit triste mamie lobotomisé",
+    correct : 'fada'
+  },
+  {
+    question: 'Que veux dire SQL ?!',
+    reponse1: 'Social Quantum Length',
+    reponse2: 'Hot tartine melon lepreux',
+    reponse3: 'Hyper Text Mark Langage',
+    reponse4: "Huit triste mamie lobotomisé",
+    correct : 'Social Quantum Length'
+  }
+];
+
+var i=0;
+
+document.getElementById('btn2').onclick = function() {
+
+    document.getElementById('quiz').innerHTML = null;
+    document.getElementById('rep1').innerHTML = null;
+    document.getElementById('rep2').innerHTML = null;
+    document.getElementById('rep3').innerHTML = null;
+    document.getElementById('rep4').innerHTML = null;
+
+    document.getElementById('quiz').innerHTML += quizz[i].question;
+    console.log(i);
+    document.getElementById('rep1').innerHTML += quizz[i].reponse1;
+    document.getElementById('rep2').innerHTML += quizz[i].reponse2;
+    document.getElementById('rep3').innerHTML += quizz[i].reponse3;
+    document.getElementById('rep4').innerHTML += quizz[i].reponse4;
+
+    if (i < 4) {
+      i++;
+    }
+    else {
+      i=4;
+    }
+
+}
+
+document.getElementById('btn1').onclick = function() {
+
+
+    document.getElementById('quiz').innerHTML = null;
+    document.getElementById('rep1').innerHTML = null;
+    document.getElementById('rep2').innerHTML = null;
+    document.getElementById('rep3').innerHTML = null;
+    document.getElementById('rep4').innerHTML = null;
+
+    document.getElementById('quiz').innerHTML += quizz[i].question;
+    document.getElementById('rep1').innerHTML += quizz[i].reponse1;
+    document.getElementById('rep2').innerHTML += quizz[i].reponse2;
+    document.getElementById('rep3').innerHTML += quizz[i].reponse3;
+    document.getElementById('rep4').innerHTML += quizz[i].reponse4;
+
+    if (i > 0) {
+      i--;
+    }
+    else {
+      i=0;
+    }
+}
+</script>
+
+
+</body>
+
 </html>
